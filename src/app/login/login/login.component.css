@@ -1,0 +1,56 @@
+.mat-form-field {
+    width: 100%;
+    min-width: 300px;
+}
+
+mat-card-title,
+mat-card-content {
+    display: flex;
+    justify-content: center;
+}
+
+.error {
+    padding: 16px;
+    width: 300px;
+    color: white;
+    background-color: red;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container-login {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.img-login {
+    width: 100%;
+    height: 100%;
+}
+
+.formLogin {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-login img {
+    width: 100%;
+    height: 100%;
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button {
+    color: #e5c7a9;
+
+    background: rgb(79 58 118);
+    width: 100%;
+
+}
