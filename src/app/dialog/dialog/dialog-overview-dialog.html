@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Crear Post</h1>
+<div mat-dialog-content>
+    <p>Ingresa nuevo Post</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Titulo</mat-label>
+        <input matInput [(ngModel)]="data.title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Descripcion</mat-label>
+        <input matInput [(ngModel)]="data.body">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button (click)="guardarPost()" cdkFocusInitial>Guardar</button>
+</div>
