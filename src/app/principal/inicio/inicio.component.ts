@@ -30,7 +30,7 @@ export class InicioComponent implements OnInit {
   expandedElement: Users | null | undefined;
   title = 'ejemplo';
   panelOpenState = false;
-  user="Invitado";
+  user = "Invitado";
 
   constructor(
     protected _serviceInicio: InicioService,
@@ -40,14 +40,14 @@ export class InicioComponent implements OnInit {
   ) {
 
     this.activatedRoute.queryParams.subscribe(params => {
-     this.user = params['user'];
+      this.user = params['user'];
       console.log(this.user); // Print the parameter to the console. 
-  })
+    })
 
   }
 
 
-   
+
 
 
 
@@ -95,7 +95,7 @@ export class InicioComponent implements OnInit {
     console.log("papa", post);
     this.dataPosts.push(post);
   }
-  back(){
+  back() {
     this.router.navigate(['/']);
   }
 

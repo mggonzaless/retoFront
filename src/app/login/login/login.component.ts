@@ -8,21 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-   
+
 
   form: FormGroup = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
 
-  
+
   @Input()
   error!: string | null;
 
   @Output() submitEM = new EventEmitter();
-  constructor(private router: Router ) { 
+  constructor(private router: Router) {
 
-    
+
   }
 
   ngOnInit() {
@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       this.submitEM.emit(this.form.value);
-      this.router.navigate(['inicio'],{ queryParams: { user: this.form.get('username')?.value  } });
-   
+      this.router.navigate(['inicio'], { queryParams: { user: this.form.get('username')?.value } });
+
     }
   }
 
