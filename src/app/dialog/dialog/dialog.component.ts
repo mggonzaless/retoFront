@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 import { Posts } from '../../models/Posts';
 import { DialogService } from '../dialog.service';
 
@@ -80,6 +81,13 @@ export class DialogOverviewExampleDialog {
 
 
       this.dialogRef.close(result);
+      Swal.fire({
+        position: 'bottom-end',
+        icon: 'success',
+        title: 'Se ha creado el Post',
+        showConfirmButton: false,
+        timer: 1500
+      });
     });
 
 

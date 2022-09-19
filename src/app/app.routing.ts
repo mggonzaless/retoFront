@@ -9,6 +9,7 @@ const routes: Routes = [
 
   { path: '', component: LoginComponent },
   { path: 'inicio', component: InicioComponent },
+  { path: 'inicio/:user', component: InicioComponent }
 
 
 ];

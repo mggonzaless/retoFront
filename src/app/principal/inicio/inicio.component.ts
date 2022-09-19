@@ -4,7 +4,8 @@ import { InicioService } from '../inicio.service';
 import { Users } from '../../models/Users';
 import { Posts } from '../../models/Posts';
 import { DialogService } from '../../dialog/dialog.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 
@@ -29,15 +30,26 @@ export class InicioComponent implements OnInit {
   expandedElement: Users | null | undefined;
   title = 'ejemplo';
   panelOpenState = false;
-
+  user = "Invitado";
   constructor(
     protected _serviceInicio: InicioService,
     protected _serviceDialog: DialogService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) {
-
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.user = params['user'];
+      console.log(this.user); // Print the parameter to the console. 
+    })
   }
   ngOnInit(): void {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: `Bienvenido,${this.user}`,
+      showConfirmButton: false,
+      timer: 4000
+    })
     this.getUsers();
 
 
@@ -73,7 +85,7 @@ export class InicioComponent implements OnInit {
     console.log("papa", post);
     this.dataPosts.push(post);
   }
-  back(){
+  back() {
     this.router.navigate(['/']);
   }
 
