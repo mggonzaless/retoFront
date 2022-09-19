@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
   submit() {
     if (this.form.valid) {
       this.submitEM.emit(this.form.value);
-      this.router.navigate(['/inicio']);
+      this.router.navigate(['inicio'],{ queryParams: { user: this.form.get('username')?.value  } });
+   
     }
   }
 
