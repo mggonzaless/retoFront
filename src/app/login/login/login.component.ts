@@ -16,10 +16,6 @@ export class LoginComponent implements OnInit {
   });
 
 
-  @Input()
-  error!: string | null;
-
-  @Output() submitEM = new EventEmitter();
   constructor(private router: Router) {
 
 
@@ -30,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   submit() {
     if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
+    
       this.router.navigate(['inicio'], { queryParams: { user: this.form.get('username')?.value } });
     }
   }
